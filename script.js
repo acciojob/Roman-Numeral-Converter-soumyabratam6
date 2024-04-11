@@ -10,14 +10,21 @@ function convertToRoman(num) {
     };
 
   //your code here
-  let result = '';
-	for (let [obj, value] of obj) {
-		 while (num >= value) {
-            result += obj;
-            num -= value;
-        }
-	}
-	 return result;
+   let result = '';
+
+  // Iterate through symbols
+  for (let i = 0; i < 13; i++) {
+    let symbol = obj[i][0];
+    let value = obj[i][1];
+    // While input number is greater than or equal to current value
+    while (num >= value) {
+      // Subtract value from num and add corresponding symbol to result
+      result += symbol;
+      num -= value;
+    }
+  }
+
+  return result;
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
